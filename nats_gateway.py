@@ -11,7 +11,6 @@ class NATSClient:
 
     def __init__(self, loop=None):
         self.loop = loop if loop else asyncio.new_event_loop()
-        self.executor = ThreadPoolExecutor()
 
     def arun(self, coro):
         if self.loop.is_running():
