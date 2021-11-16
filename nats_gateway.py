@@ -84,7 +84,7 @@ class NATSClient:
         while not future.done() and not future.cancelled():
             self.loop._run_once()
 
-        self.arun(self.client.unsubscribe(subscription))
+        self.arun(subscription.unsubscribe())
 
         result = future.result()
         return json.loads(result.data)
